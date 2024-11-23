@@ -14,7 +14,7 @@ const BlogSection = () => {
         <div className="w-full">
           {/* top section */}
           <div className="flex items-center justify-between w-full -mt-36 md:mt-0">
-            <h1 className="text-lg font-bold text-center md:text-4xl md:w-auto md:text-left">
+            <h1 className="text-lg font-semibold text-center md:text-4xl md:w-auto md:text-left">
               Our Latest Blog
             </h1>
             <div className="relative md:mt-0">

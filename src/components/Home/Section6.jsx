@@ -5,18 +5,18 @@ import img from "../../assets/home/section6.png";
 
 const Section6 = () => {
   return (
-    <div className="-mt-12 md:mt-0 md:-mb-12">
+    <div className="">
       {/* Background Polygon */}
       <img src={polygon} alt="Polygon Background" className="w-full" />
 
       {/* Content Section */}
-      <div className="w-full text-center bg-[#F4F4F4]  relative">
+      <div className="w-full text-center bg-[#F4F4F4]  relative pb-10">
         <Container>
           <div className="flex flex-wrap items-center justify-between py-5">
             {/* Left Section (Text Content) */}
             <div className="w-full text-left md:w-1/2">
               <h3
-                className="text-xl font-bold md:text-2xl lg:text-4xl "
+                className="text-xl font-semibold md:text-2xl lg:text-4xl "
                 style={{ lineHeight: "3.2rem" }}
               >
                 Pick and Pack Services: <br />

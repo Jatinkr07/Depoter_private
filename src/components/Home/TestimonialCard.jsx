@@ -5,7 +5,7 @@ import bgCover from "../../assets/home/bgCover.png";
 const TestimonialCard = () => {
   return (
     <div
-      className="w-[380px] shadow mr-[50px] py-2 px-3 border border-gray-200 rounded-lg"
+      className="w-[380px] shadow-md mr-[50px] py-2 px-3 border border-gray-200 rounded-lg"
       style={{
         backgroundImage: `url(${bgCover})`,
         backgroundSize: "cover",

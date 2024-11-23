@@ -11,7 +11,7 @@ import { Container } from "react-bootstrap";
 
 const CompanyLogoSlider = () => {
   return (
-    <div data-aos="fade-up" className="py-[100px] ">
+    <div data-aos="fade-up" className="py-[50px] ">
       <Container>
         <Swiper slidesPerView={5} spaceBetween={30} className="mySwiper">
           {logos.map((logo) => {

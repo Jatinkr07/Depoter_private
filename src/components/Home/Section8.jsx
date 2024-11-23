@@ -15,14 +15,14 @@ const Section8 = () => {
             <img src={img} className="w-[85%] my-0 mx-auto" alt="" />
           </div>
           {/* right */}
-          <div className="w-[100%] md:w-[50%] text-left -mt-12">
-            <h3 className="text-lg font-bold md:text-4xl">
+          <div className="w-[100%] md:w-[50%] text-left ">
+            <h3 className="text-lg font-semibold md:text-4xl">
               Scalability: Adapting to Business Growth <br />
-              <h3 className="mt-2 text-lg font-bold md:text-4xl">
+              <h3 className="mt-2 text-lg font-semibold md:text-4xl">
                 and Market Fluctuations
               </h3>
             </h3>
-            <p className="my-3 text-lg">
+            <p className="my-3 text-[#454545] text-lg">
               Another noteworthy feature of Depoter's B2B fulfillment services
               is its scalability. Whether a business is a start-up or an
               established enterprise, Depoter's flexible solutions can

@@ -27,14 +27,14 @@ const Section9 = () => {
             <div className="flex flex-col justify-center w-full text-left md:w-1/2">
               <div className="flex flex-col gap-6 md:flex-row md:gap-8">
                 {/* Box 1 */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <img
                     src={smallTruc}
                     alt="Truck Icon"
                     className="border-2 border-[#EDA119] rounded-full p-2 w-16 h-16"
                   />
                   <div>
-                    <h3 className="text-base font-semibold md:text-lg lg:text-xl">
+                    <h3 className="mb-0 text-base font-semibold md:text-lg lg:text-xl">
                       Cost Optimization
                     </h3>
                     <p className="text-sm text-gray-600 md:text-base">
@@ -44,14 +44,14 @@ const Section9 = () => {
                 </div>
 
                 {/* Box 2 */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <img
                     src={smallTruc}
                     alt="Truck Icon"
                     className="border-2 border-[#EDA119] rounded-full p-2 w-16 h-16"
                   />
                   <div>
-                    <h3 className="text-base font-semibold md:text-lg lg:text-xl">
+                    <h3 className="mb-0 text-base font-semibold md:text-lg lg:text-xl">
                       Expert Truckload
                     </h3>
                     <p className="text-sm text-gray-600 md:text-base">
@@ -71,7 +71,7 @@ const Section9 = () => {
 
               {/* Call-to-Action */}
               <div className="flex items-center justify-center gap-3 mt-4 md:justify-start">
-                <p className="text-sm font-medium text-yellow-500 md:text-lg lg:text-2xl">
+                <p className="mb-0 text-sm font-medium text-yellow-500 md:text-lg lg:text-2xl">
                   Start Your Journey
                 </p>
                 <img

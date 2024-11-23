@@ -17,7 +17,7 @@ const MeetingScheduleSection = () => {
             </h1>
             <div className="flex ">
               {" "}
-              <button className="px-3 py-1.5 text-sm text-white transition duration-300 border-2 border-white rounded-full sm:px-5 sm:py-3 md:text-lg ">
+              <button className="px-4 py-[5px] text-sm text-white transition duration-300 border-2 border-white rounded-full sm:px-5 sm:py-2 md:text-lg ">
                 Schedule Meeting
               </button>
             </div>

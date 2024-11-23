@@ -1,40 +1,61 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Import hamburger and close icons
 import logoTxt from "../../assets/header/logoText.png";
 import logo from "../../assets/header/logo.png";
 import Container from "../global/Container";
 import { Link, useNavigate } from "react-router-dom";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaArrowDown, FaArrowUp, FaHandshake } from "react-icons/fa";
+import { BiSupport } from "react-icons/bi";
+import { AiOutlineLogin, AiOutlinePhone } from "react-icons/ai";
 
 const Header = () => {
   const navigate = useNavigate();
   const [isDropDown, setIsDropDown] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up"); // Track scroll direction
+  const dropdownRef = useRef(null);
+  const lastScrollY = useRef(0);
+  // State to manage menu visibility
   const pages = Array.from({ length: 9 }, (_, i) => `page${i + 2}`);
 
   const handleChange = (event) => {
     const selectedPage = event.target.value;
-    // Navigate to the selected page
     if (selectedPage) {
       navigate(selectedPage);
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
+  const handleDropdownToggle = () => setIsDropDown(!isDropDown);
 
+  const handleOutsideClick = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropDown(false);
+    }
+  };
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    setScrollDirection(currentScrollY > lastScrollY.current ? "down" : "up");
+    setIsSticky(currentScrollY > 0);
+    lastScrollY.current = currentScrollY;
+  };
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle menu on click for mobile devices
+  useEffect(() => {
+    if (isDropDown) {
+      document.addEventListener("click", handleOutsideClick);
+    } else {
+      document.removeEventListener("click", handleOutsideClick);
+    }
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [isDropDown]);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -45,6 +66,27 @@ const Header = () => {
         }`}
       >
         <Container>
+          <div
+            className={`flex justify-end w-full mb-2 lg:mb-0 lg:w-auto transition-all duration-300 ${
+              scrollDirection === "down" ? "opacity-0 h-0" : "opacity-100"
+            }`}
+          >
+            <div className="flex items-center space-x-4 text-sm">
+              <a
+                href="#"
+                className="flex items-center space-x-1 no-underline hover:underline"
+              >
+                <AiOutlineLogin className="text-xl text-black" />
+                <span className="text-black">Login</span>
+              </a>
+              <div className="h-5 border-r border-gray-900" />
+              <a href="#" className="flex items-center space-x-1 no-underline">
+                <BiSupport className="text-xl text-black" />
+                <span className="text-black">Support</span>
+              </a>
+            </div>
+          </div>
+
           <div className="flex items-center justify-between mx-auto">
             {/* Logo Section */}
             <div className="flex items-center space-x-2">
@@ -92,30 +134,35 @@ const Header = () => {
               </select>
               <a
                 href="#"
-                className="text-lg md:text-[16px] text-black no-underline "
+                className="text-lg md:text-[16px] hover:underline text-black no-underline"
               >
                 Order Fulfillment
               </a>
-              <a
-                href="#"
-                className="no-underline flex items-center justify-center text-black text-lg md:text-[16px]"
-                onClick={() => setIsDropDown(!isDropDown)}
+              <div
+                ref={dropdownRef}
+                className="relative"
+                onClick={handleDropdownToggle}
               >
-                Services{" "}
-                <span className="pl-2">
-                  {!isDropDown ? <FaArrowUp /> : <FaArrowDown />}
-                </span>
+                <a
+                  href="#"
+                  className="no-underline flex items-center justify-center text-black text-lg md:text-[16px] hover:underline"
+                >
+                  Services{" "}
+                  <span className="pl-2">
+                    {!isDropDown ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </span>
+                </a>
                 {isDropDown && <DropDown />}
-              </a>
+              </div>
               <a
                 href="#"
-                className="no-underline text-black text-lg md:text-[16px]"
+                className="no-underline text-black text-lg md:text-[16px] hover:underline"
               >
                 About us
               </a>
               <a
                 href="#"
-                className="no-underline text-black text-lg md:text-[16px]"
+                className="no-underline text-black text-lg md:text-[16px] hover:underline"
               >
                 Careers
               </a>
@@ -137,7 +184,7 @@ const Header = () => {
   );
 };
 
-const DropDown = ({ setDropDown, dropDown }) => {
+const DropDown = () => {
   const linksArr = [
     {
       Heading: "B2B Fulfillment",
@@ -165,42 +212,39 @@ const DropDown = ({ setDropDown, dropDown }) => {
     },
   ];
   return (
-    <>
-      <div className="absolute bg-[#FFBE2E] top-20 max-[600px]:right-0 right-[15rem] border border-black rounded p-4 z-10">
-        <h3 className="px-12 text-xl">We Offer</h3>
-        <div className="flex list-none ">
-          <div>
-            {linksArr?.slice(0, 3)?.map((elem, index) => (
-              <div
-                key={index}
-                className="flex items-center px-12 max-[600px]:px-2 max-[600px]:py-1 py-2 text-xl"
-              >
-                <FaHandshake className="mr-2 text-3xl" />
-                <div>
-                  <span className="text-lg">{elem?.Heading}</span>
-                  <p className="text-sm">{elem?.para}</p>
-                </div>
+    <div className="absolute bg-[#FFBE2E] top-10 -left-40 w-[700px] border border-black rounded p-4 z-10 ">
+      <h3 className="px-12 text-xl ps-0">We Offer</h3>
+      <div className="flex list-none">
+        <div>
+          {linksArr.slice(0, 3).map((elem, index) => (
+            <div
+              key={index}
+              className="flex items-center py-2 text-xl  max-[600px]:px-2 max-[600px]:py-1"
+            >
+              <FaHandshake className="mb-3 mr-2 text-3xl" />
+              <div>
+                <span className="text-lg">{elem.Heading}</span>
+                <p className="text-sm text-[#333333]">{elem.para}</p>
               </div>
-            ))}
-          </div>
-          <div>
-            {linksArr?.slice(3, linksArr?.length)?.map((elem, index) => (
-              <div
-                key={index}
-                className="flex items-center px-12 max-[600px]:px-2 max-[600px]:py-1 py-2 text-xl"
-              >
-                <FaHandshake className="mr-2 text-3xl" />
-                <div>
-                  <span className="text-lg">{elem?.Heading}</span>
-                  <p className="text-sm">{elem?.para}</p>
-                </div>
+            </div>
+          ))}
+        </div>
+        <div>
+          {linksArr.slice(3).map((elem, index) => (
+            <div
+              key={index}
+              className="flex items-center px-12 py-2 text-xl max-[600px]:px-2 max-[600px]:py-1"
+            >
+              <FaHandshake className="mb-3 mr-2 text-3xl" />
+              <div>
+                <span className="text-lg">{elem.Heading}</span>
+                <p className="text-sm">{elem.para}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
-
 export default Header;

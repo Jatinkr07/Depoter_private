@@ -9,10 +9,13 @@ const Section12 = () => {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row ">
           {/* Left Section (Text) */}
           <div className="w-full text-left md:w-1/2">
-            <h3 className="text-lg font-bold leading-snug md:text-4xl">
+            <h3
+              className="text-lg font-semibold leading-snug md:text-4xl"
+              style={{ lineHeight: "3.2rem" }}
+            >
               Last-Mile Delivery: Ensuring Timely and Reliable Deliveries
             </h3>
-            <p className="my-4 text-sm text-gray-600 md:text-lg">
+            <p className="my-3 text-sm text-gray-600 md:text-lg">
               In the realm of last-mile delivery, Depoter excels in providing
               timely and reliable shipping solutions. The company has a network
               of strategic partnerships with transportation providers, allowing

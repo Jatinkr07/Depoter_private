@@ -20,11 +20,14 @@ const Section13 = () => {
 
           {/* Right Section (Text) */}
           <div className="w-full text-left md:w-1/2">
-            <h3 className="text-lg font-bold leading-snug md:text-4xl">
+            <h3
+              className="text-lg font-semibold leading-snug md:text-4xl"
+              style={{ lineHeight: "3.2rem" }}
+            >
               Technology-Driven Fulfillment: Leveraging Innovation for B2B
               Success
             </h3>
-            <p className="my-4 text-sm text-gray-600 md:text-lg">
+            <p className="my-3 text-sm text-gray-600 md:text-lg">
               One key aspect of Depoter's B2B fulfillment services is its
               advanced technology infrastructure. The company utilizes warehouse
               management systems (WMS) and order processing systems to ensure

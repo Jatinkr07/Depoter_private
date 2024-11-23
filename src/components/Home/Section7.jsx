@@ -19,7 +19,10 @@ const Section7 = () => {
 
           {/* Right Section (Text) */}
           <div className="w-full mt-6 text-left md:w-1/2 md:mt-0">
-            <h3 className="text-xl md:text-2xl lg:text-[32px] font-semibold">
+            <h3
+              className="text-xl md:text-2xl lg:text-[32px] font-semibold"
+              style={{ lineHeight: "2.3rem" }}
+            >
               Order Processing and Inventory Management: <br />
               <span className="block mt-2">
                 The Foundation of B2B Fulfillment
