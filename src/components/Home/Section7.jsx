@@ -20,12 +20,12 @@ const Section7 = () => {
           {/* Right Section (Text) */}
           <div className="w-full mt-6 text-left md:w-1/2 md:mt-0">
             <h3
-              className="text-xl md:text-2xl lg:text-[32px] font-semibold"
-              style={{ lineHeight: "2.3rem" }}
+              className="text-xl font-semibold md:text-2xl lg:text-4xl"
+              style={{ lineHeight: "3rem" }}
             >
-              Order Processing and Inventory Management: <br />
-              <span className="block mt-2">
-                The Foundation of B2B Fulfillment
+              Order Processing and Inventory Management :
+              <span className="mt-2 ">
+                &nbsp;The Foundation of B2B Fulfillment
               </span>
             </h3>
             <p className="my-6 text-base leading-relaxed text-gray-600 md:text-lg lg:text-xl">

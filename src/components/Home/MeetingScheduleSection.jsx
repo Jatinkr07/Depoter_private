@@ -6,7 +6,7 @@ const MeetingScheduleSection = () => {
     <div className="bg-[#00061C]  w-full md:mt-0 -mt-24">
       <Container>
         <div
-          data-aos="fade-up"
+          data-aos="fade-right"
           className="flex py-[43px] justify-between flex-nowrap lg:flex-nowrap"
         >
           {/* Left Section */}

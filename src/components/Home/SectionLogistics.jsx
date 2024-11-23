@@ -5,12 +5,17 @@ import img2 from "../../assets/home/section13.jpeg";
 
 export default function SectionLogistics() {
   return (
-    <div className="w-full py-12 space-y-12 md:-space-y-0.5">
+    <div className="w-full py-12 pt-0 space-y-12 md:-space-y-0.5">
       {/* First Section */}
       <section className="container grid gap-8 px-4 mx-auto md:flex md:items-center">
         {/* Left (Text) */}
         <div className="space-y-4 md:w-1/2">
-          <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">
+          <h2
+            className="text-3xl font-semibold tracking-tight lg:text-4xl"
+            style={{
+              lineHeight: "3.5rem",
+            }}
+          >
             Last-Mile Delivery: Ensuring Timely and Reliable Deliveries
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -44,7 +49,12 @@ export default function SectionLogistics() {
         </div>
         {/* <div className="hidden md:block w-[36px] bg-gray-300 h-[400px] mx-auto" />{" "} */}
         <div className="space-y-4 md:w-1/2">
-          <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">
+          <h2
+            className="text-3xl font-semibold tracking-tight lg:text-4xl"
+            style={{
+              lineHeight: "3.5rem",
+            }}
+          >
             Technology-Driven Fulfillment: Leveraging Innovation for B2B Success
           </h2>
           <p className="text-lg text-muted-foreground">
