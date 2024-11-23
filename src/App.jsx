@@ -13,8 +13,11 @@ import Page4 from "./pages/Page4";
 import Page5 from "./pages/page5";
 import Page6 from "./pages/page6";
 import Page7 from "./pages/Page7";
+
 import BlogHome from "./pages/BlogHome";
 import ScrollTop from "./hook/scrollTop";
+import Page8 from "./pages/Page8";
+import Page9 from "./pages/Page9";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +30,8 @@ const router = createBrowserRouter(
       <Route path="page6" element={<Page6 />} />
       <Route path="page7" element={<Page7 />} />
       <Route path="page8" element={<BlogHome />} />
+      <Route path="/page9" element={<Page8 />} />
+      <Route path="/page10" element={<Page9 />} />
     </Route>
   )
 );

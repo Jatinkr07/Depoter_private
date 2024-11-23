@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Import hamburger and close icons
-
 import logoTxt from "../../assets/header/logoText.png";
 import logo from "../../assets/header/logo.png";
 import Container from "../global/Container";
 import { Link, useNavigate } from "react-router-dom";
+import { FaArrowDown, FaArrowUp, FaHandshake } from "react-icons/fa";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isDropDown, setIsDropDown] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
-  const pages = Array.from({ length: 7 }, (_, i) => `page${i + 2}`);
+  const pages = Array.from({ length: 9 }, (_, i) => `page${i + 2}`);
+
   const handleChange = (event) => {
     const selectedPage = event.target.value;
     // Navigate to the selected page
@@ -18,6 +20,7 @@ const Header = () => {
       navigate(selectedPage);
     }
   };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -35,95 +38,168 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header
-      className={`w-full text-black py-4 fixed top-0 z-50 transition-colors duration-300 ${
-        isSticky ? "bg-[#FFBE2E]" : "bg-transparent"
-      }`}
-    >
-      <Container>
-        <div className="flex items-center justify-between mx-auto">
-          {/* Logo Section */}
-          <div className="flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="md:h-[68px] h-8" />
-            <img src={logoTxt} alt="Logo Text" className="md:h-[68px] h-10" />
-          </div>
-
-          {/* Hamburger Menu Button for Mobile */}
-          <button
-            className="text-3xl text-black lg:hidden"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-
-          {/* Navigation Links and Right Section */}
-          <nav
-            className={`lg:flex items-center  space-x-12 ${
-              isMenuOpen
-                ? "flex flex-col items-center justify-center absolute top-0 left-0 right-0 bg-white md:h-0 h-[45vh] space-y-2 pr-8 "
-                : "hidden"
-            } lg:block`}
-          >
-            {isMenuOpen && (
-              <button
-                className="absolute text-3xl text-black top-4 right-4"
-                onClick={toggleMenu}
-              >
-                <FiX />
-              </button>
-            )}
-            <select
-              onChange={handleChange}
-              defaultValue=""
-              className="p-2 mt-2 border border-gray-300 rounded-md shadow-sm w-fit focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="" disabled>
-                Select a page
-              </option>
-              {pages?.map((elem) => (
-                <option key={elem} value={elem}>
-                  {elem}
-                </option>
-              ))}
-            </select>
-            <a
-              href="#"
-              className="text-lg md:text-[20px] text-black no-underline "
-            >
-              Order Fulfillment
-            </a>
-            <a
-              href="#"
-              className="no-underline text-black text-lg md:text-[20px]"
-            >
-              Services
-            </a>
-            <a
-              href="#"
-              className="no-underline text-black text-lg md:text-[20px]"
-            >
-              About us
-            </a>
-            <a
-              href="#"
-              className="no-underline text-black text-lg md:text-[20px]"
-            >
-              Careers
-            </a>
-
-            {/* Right Section - Buttons */}
-            <div className="grid items-center grid-cols-1 space-x-5 space-y-3 md:space-y-0 md:grid-cols-2 ">
-              <button className="px-4 py-2 md:px-4 md:py-2 transition duration-300 border border-black rounded hover:bg-black hover:text-white text-sm md:text-[20px]">
-                Get a Quote
-              </button>
-              <button className=" px-4 py-2 md:px-4 md:py-3  transition duration-300 bg-black text-white rounded hover:text-gray-900  hover:bg-gray-100  text-sm md:text-[20px] ">
-                Contact Us
-              </button>
+    <>
+      <header
+        className={`w-full text-black py-2 fixed top-0 z-50 transition-colors duration-300 ${
+          isSticky ? "bg-[#FFBE2E]" : "bg-transparent"
+        }`}
+      >
+        <Container>
+          <div className="flex items-center justify-between mx-auto">
+            {/* Logo Section */}
+            <div className="flex items-center space-x-2">
+              <img src={logo} alt="Logo" className="md:h-[38px] h-8" />
+              <img src={logoTxt} alt="Logo Text" className="md:h-[42px] h-10" />
             </div>
-          </nav>
+
+            {/* Hamburger Menu Button for Mobile */}
+            <button
+              className="text-3xl text-black lg:hidden"
+              onClick={toggleMenu}
+            >
+              {isMenuOpen ? <FiX /> : <FiMenu />}
+            </button>
+
+            {/* Navigation Links and Right Section */}
+            <nav
+              className={`lg:flex items-center  space-x-12 ${
+                isMenuOpen
+                  ? "flex flex-col items-center justify-center absolute top-0 left-0 right-0 bg-white md:h-0 h-[45vh] space-y-2 pr-8"
+                  : "hidden"
+              } lg:block`}
+            >
+              {isMenuOpen && (
+                <button
+                  className="absolute text-3xl text-black top-4 right-4"
+                  onClick={toggleMenu}
+                >
+                  <FiX />
+                </button>
+              )}
+              <select
+                onChange={handleChange}
+                defaultValue=""
+                className="p-2 mt-2 border border-gray-300 rounded-md shadow-sm w-fit focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="" disabled>
+                  Select a page
+                </option>
+                {pages?.map((elem) => (
+                  <option key={elem} value={elem}>
+                    {elem}
+                  </option>
+                ))}
+              </select>
+              <a
+                href="#"
+                className="text-lg md:text-[16px] text-black no-underline "
+              >
+                Order Fulfillment
+              </a>
+              <a
+                href="#"
+                className="no-underline flex items-center justify-center text-black text-lg md:text-[16px]"
+                onClick={() => setIsDropDown(!isDropDown)}
+              >
+                Services{" "}
+                <span className="pl-2">
+                  {!isDropDown ? <FaArrowUp /> : <FaArrowDown />}
+                </span>
+                {isDropDown && <DropDown />}
+              </a>
+              <a
+                href="#"
+                className="no-underline text-black text-lg md:text-[16px]"
+              >
+                About us
+              </a>
+              <a
+                href="#"
+                className="no-underline text-black text-lg md:text-[16px]"
+              >
+                Careers
+              </a>
+
+              {/* Right Section - Buttons */}
+              <div className="grid items-center grid-cols-1 space-x-5 space-y-3 md:space-y-0 md:grid-cols-2 ">
+                <button className="px-4 py-2 md:px-4 md:py-2 transition duration-300 border border-black rounded hover:bg-black hover:text-white text-sm md:text-[16px]">
+                  Get a Quote
+                </button>
+                <button className=" px-4 py-2 md:px-4 md:py-3  transition duration-300 bg-black text-white rounded hover:text-gray-900  hover:bg-gray-100  text-sm md:text-[16px] ">
+                  Contact Us
+                </button>
+              </div>
+            </nav>
+          </div>
+        </Container>
+      </header>
+    </>
+  );
+};
+
+const DropDown = ({ setDropDown, dropDown }) => {
+  const linksArr = [
+    {
+      Heading: "B2B Fulfillment",
+      para: "Efficient B2B order management.",
+    },
+    {
+      Heading: "B2C Fulfillment",
+      para: "Reliable e-commerce fulfillment services.",
+    },
+    {
+      Heading: "FBA Fulfillment",
+      para: "Integrated Amazon fulfillment solution.",
+    },
+    {
+      Heading: "FBN Fulfillment",
+      para: "Comprehensive Noon logistics service.",
+    },
+    {
+      Heading: "Multi-channel Ecommerce",
+      para: "Seamless multichannel order fulfillment.",
+    },
+    {
+      Heading: "Logistics",
+      para: "Comprehensive local and global logistics.",
+    },
+  ];
+  return (
+    <>
+      <div className="absolute bg-[#FFBE2E] top-20 max-[600px]:right-0 right-[15rem] border border-black rounded p-4 z-10">
+        <h3 className="px-12 text-xl">We Offer</h3>
+        <div className="flex list-none ">
+          <div>
+            {linksArr?.slice(0, 3)?.map((elem, index) => (
+              <div
+                key={index}
+                className="flex items-center px-12 max-[600px]:px-2 max-[600px]:py-1 py-2 text-xl"
+              >
+                <FaHandshake className="mr-2 text-3xl" />
+                <div>
+                  <span className="text-lg">{elem?.Heading}</span>
+                  <p className="text-sm">{elem?.para}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div>
+            {linksArr?.slice(3, linksArr?.length)?.map((elem, index) => (
+              <div
+                key={index}
+                className="flex items-center px-12 max-[600px]:px-2 max-[600px]:py-1 py-2 text-xl"
+              >
+                <FaHandshake className="mr-2 text-3xl" />
+                <div>
+                  <span className="text-lg">{elem?.Heading}</span>
+                  <p className="text-sm">{elem?.para}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </Container>
-    </header>
+      </div>
+    </>
   );
 };
 

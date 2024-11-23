@@ -1,4 +1,3 @@
-import React from "react";
 import Banner from "../components/page7/Banner";
 import Section1 from "../components/page7/Section1";
 import Section2 from "../components/page7/Section2";

@@ -23,7 +23,7 @@ const BlogSection = () => {
                 className="md:w-[40px] absolute w-[30px] left-[-30px] md:left-[-40px] bottom-[-10px] md:bottom-[-15px]"
                 alt="Car Icon"
               />
-              <button className="px-3 py-2 text-sm font-normal rounded md:text-base bg-yellow">
+              <button className="px-3 py-2 text-sm font-normal rounded md:text-lg bg-yellow">
                 See All Blog Posts
               </button>
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { Container } from "react-bootstrap";
 import img from "../../assets/home/section8.png";
@@ -10,23 +11,25 @@ const Section8 = () => {
         {/* content section */}
         <div className="flex flex-wrap items-center justify-between py-5 md:flex-nowrap">
           {/* left */}
-          <div className="w-[100%] md:w-[50%] mt-5 md:mt-0 relative">
-            <img src={img} className="w-[70%] my-0 mx-auto" alt="" />
+          <div className="w-[100%] md:w-[50%] -mt-10 md:mt-0 relative">
+            <img src={img} className="w-[85%] my-0 mx-auto" alt="" />
           </div>
           {/* right */}
-          <div className="w-[100%] md:w-[50%] text-left">
+          <div className="w-[100%] md:w-[50%] text-left -mt-12">
             <h3 className="text-lg font-bold md:text-4xl">
-              Order Processing and Inventory Management: The Foundation of B2B
-              Fulfillment
+              Scalability: Adapting to Business Growth <br />
+              <h3 className="mt-2 text-lg font-bold md:text-4xl">
+                and Market Fluctuations
+              </h3>
             </h3>
-            <p className="my-3">
-              For e-commerce fulfillment, maintaining an optimal inventory is
-              key, and Depoter’s B2B warehouse operations are designed to ensure
-              that products are available whenever they are needed. By
-              integrating warehouse management systems (WMS) with order
-              processing tools, Depoter provides real-time visibility into
-              inventory status, allowing businesses to make informed decisions
-              and respond to demand fluctuations swiftly.
+            <p className="my-3 text-lg">
+              Another noteworthy feature of Depoter's B2B fulfillment services
+              is its scalability. Whether a business is a start-up or an
+              established enterprise, Depoter's flexible solutions can
+              accommodate varying order volumes and seasonal fluctuations. This
+              scalability is crucial for businesses experiencing growth, as it
+              allows them to adapt their fulfillment processes without
+              compromising efficiency.
             </p>
 
             <div className="flex items-center gap-3">

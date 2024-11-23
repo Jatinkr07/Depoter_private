@@ -3,9 +3,9 @@ import Container from "../global/Container";
 
 const Banner = () => {
   return (
-    <div className="w-full flex items-center h-auto min-h-[100vh]  bg-yellow py-10">
+    <div className=" flex items-center h-auto min-h-[100vh]  w-full  bg-yellow py-10">
       <Container>
-        <div className="flex flex-wrap items-center justify-between w-full mt-10 md:mt-0 md:flex-nowrap">
+        <div className="flex flex-wrap items-center justify-between mt-10 md:mt-0 md:flex-nowrap">
           {/* Left Content */}
           <div className="w-full md:w-[50%] text-left mb-8 md:mb-0 px-4 md:px-0">
             <h1 className="font-bold text-[2rem] md:text-[42px] lg:text-[56px] leading-tight">

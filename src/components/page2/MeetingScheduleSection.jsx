@@ -24,12 +24,8 @@ const MeetingScheduleSection = () => {
           </div>
 
           {/* right */}
-          <div className="relative w-[100%] sm:w-[40%]">
-            <img
-              src={boyImg}
-              className="h-[100%] object-cover sm:mt-[-50px] mt-[25px] "
-              alt=""
-            />
+          <div className="relative scale-150">
+            <img src={boyImg} className="" alt="" />
           </div>
         </div>
       </Container>
