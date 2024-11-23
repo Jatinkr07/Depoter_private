@@ -6,13 +6,14 @@ import c3Img from "../../assets/home/c3.png";
 import c4Img from "../../assets/home/c4.png";
 import c5Img from "../../assets/home/c5.png";
 import homeImg from "../../assets/home/homeImg.jpeg";
+import homeVideo from "../../assets/home.mp4";
 
 const Banner = () => {
   const trustedCustomers = [c1Img, c2Img, c3Img, c4Img, c5Img];
   return (
     <div className="w-full flex items-center bg-yellow  md:h-[100vh]">
       <Container>
-        <div className="relative flex flex-col items-center justify-between w-full lg:flex-row">
+        <div className="relative flex flex-col items-center justify-between w-full mt-24 lg:flex-row md:mt-0">
           {/* Content */}
           <div className="w-full mx-auto text-center md:mt-16 lg:text-left">
             <h1 className="text-[1.6rem] font-semibold text-left sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl">
@@ -55,14 +56,19 @@ const Banner = () => {
           </div>
 
           {/* Image Section */}
-          <div className="flex items-center justify-center  w-[100%] px-2  md:h-[62vh] md:p-4 p-2 mt-8 bg-white rounded-2xl lg:mt-16 ">
+          <div className="flex items-center justify-center  w-[100%]   md:h-[70vh]   mt-8  rounded-2xl lg:mt-16 ">
             <div className="">
               {" "}
-              <img
-                src={homeImg}
-                alt="Storage Solutions"
-                className="object-cover w-full h-[60vh] rounded-2xl"
-              />
+              <video
+                className="mb-4 md:mb-0 rounded-2xl"
+                autoPlay
+                controls
+                muted
+                loop
+                width={700}
+              >
+                <source src={homeVideo} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

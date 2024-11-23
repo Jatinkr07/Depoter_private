@@ -11,10 +11,10 @@ export default function SectionLogistics() {
         {/* Left (Text) */}
         <div className="space-y-4 md:w-1/2">
           <h2
-            className="text-3xl font-semibold tracking-tight lg:text-4xl"
-            style={{
-              lineHeight: "3.5rem",
-            }}
+            className="text-xl font-semibold tracking-tight lg:text-4xl leading-[2rem]  md:leading-[3.5rem]"
+            // style={{
+            //   lineHeight: "3.5rem",
+            // }}
           >
             Last-Mile Delivery: Ensuring Timely and Reliable Deliveries
           </h2>
@@ -50,10 +50,10 @@ export default function SectionLogistics() {
         {/* <div className="hidden md:block w-[36px] bg-gray-300 h-[400px] mx-auto" />{" "} */}
         <div className="space-y-4 md:w-1/2">
           <h2
-            className="text-3xl font-semibold tracking-tight lg:text-4xl"
-            style={{
-              lineHeight: "3.5rem",
-            }}
+            className="text-xl font-semibold tracking-tight lg:text-4xl md:leading-[3.5rem] leading-[2rem]"
+            // style={{
+            //   lineHeight: "3.5rem",
+            // }}
           >
             Technology-Driven Fulfillment: Leveraging Innovation for B2B Success
           </h2>

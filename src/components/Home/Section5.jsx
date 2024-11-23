@@ -4,10 +4,10 @@ const Section5 = () => {
   return (
     <Container>
       <div
-        className="w-full text-[1rem] text-center md:text-4xl md:mt-0 -mt-20"
-        style={{
-          lineHeight: "3.5rem",
-        }}
+        className="w-full text-[1rem] text-center md:text-4xl leading-[2rem] md:leading-[4rem] md:mt-0 -mt-20"
+        // style={{
+        //   lineHeight: "3.5rem",
+        // }}
       >
         <p>
           Leading provider of B2B fulfillment services in Dubai, offers

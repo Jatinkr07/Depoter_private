@@ -1,31 +1,35 @@
-import React from "react";
-import rightImage from "../../assets/home/lastSection1.svg";
-import leftImage from "../../assets/home/lastSection2.svg";
 import { Container } from "react-bootstrap";
-
 import boyImg from "../../assets/home/workerBoy.png";
 
 const MeetingScheduleSection = () => {
   return (
-    <div className="bg-[#393939] w-full py-[100px] md:py-0">
+    <div className="bg-[#00061C]  w-full md:mt-0 -mt-24">
       <Container>
         <div
-          data-aos="fade-up"
-          className="w-full flex justify-between bg-[#393939] items-center flex-wrap sm:flex-nowrap"
+          data-aos="fade-right"
+          className="flex py-[43px] justify-between flex-nowrap lg:flex-nowrap"
         >
-          {/* left */}
-          <div className="relative w-[100%] sm:w-[60%]">
-            <h1 className="text-white text-[24px] sm:text-[35px] md:text-[50px]">
-              Get the essentials and lorem <br /> ipsum today!
+          {/* Left Section */}
+          <div className="w-full sm:w-[55%] text-left sm:text-left">
+            <h1 className="text-white font-semibold text-[16px] sm:text-[35px] md:text-[38px] lg:text-[44px] leading-tight mb-4">
+              Get the essentials and lorem <br className="hidden sm:block" />
+              ipsum today!
             </h1>
-            <button className="text-white border-white border-2 px-5 py-2 mt-3 rounded-[50px]">
-              Schedule Meeting
-            </button>
+            <div className="flex ">
+              {" "}
+              <button className="px-4 py-[5px] text-sm text-white transition duration-300 border-2 border-white rounded-full sm:px-5 sm:py-2 md:text-lg ">
+                Schedule Meeting
+              </button>
+            </div>
           </div>
 
-          {/* right */}
-          <div className="relative scale-150">
-            <img src={boyImg} className="" alt="" />
+          {/* Right Section */}
+          <div className="w-0 sm:w-[45%] flex justify-center relative ">
+            <img
+              src={boyImg}
+              className="hidden sm:block absolute bottom-[2.5rem] left-[50%] translate-x-[-50%] right-0 object-contain w-[100%] scale-[1.9] h-[100%] z-[999] "
+              alt="Worker Boy"
+            />
           </div>
         </div>
       </Container>

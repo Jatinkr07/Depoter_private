@@ -46,16 +46,16 @@ const Section4 = () => {
               inventory.
             </p>
           </div>{" "}
-          <div className="flex items-center justify-center h-full pb-[180px]">
+          <div className="flex items-center justify-center md:h-full md:pb-[180px]">
             <img
               src={border}
-              className="mx-auto mt-0 md:h-[100px] md:w-50 supply-border"
+              className="md:mx-auto mt-0 md:h-[100px] md:block hidden md:w-50 supply-border"
               alt=""
             />
           </div>
           {/* box2 */}
           <div className="text-center ">
-            <div className="flex justify-between gap-1 p-5 px-2 mt-12 home-supplyChange-box md:mt-0">
+            <div className="flex justify-between gap-1 p-5 px-2 mt-12 home-supplyChange-box md:mt-0 ">
               {/* Efficient Storage Box */}
               <div className="absolute p-2 md:-translate-x-14 bg-white rounded-full -translate-x-[88px] -translate-y-[115px] md:-translate-y-[110px] hidden md:block">
                 <div className="flex items-center justify-center w-16 h-16 rounded-full bg-purple-50">
@@ -89,7 +89,7 @@ const Section4 = () => {
               </div>
             </div>
 
-            <div>
+            <div className="pb-12 md:pb-0">
               <div className="md:-mt-8">
                 {" "}
                 <p className="font-[600] my-2 ">2. Store & Manage</p>
@@ -100,10 +100,10 @@ const Section4 = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center h-full pb-[180px]">
+          <div className="flex items-center justify-center md:h-full md:pb-[180px]">
             <img
               src={border}
-              className="mx-auto mt-0 md:h-[100px] md:w-50 supply-border"
+              className="mx-auto mt-0 md:h-[100px] md:block hidden md:w-50 supply-border"
               alt=""
             />
           </div>
@@ -112,15 +112,15 @@ const Section4 = () => {
             style={{
               background: "linear-gradient(to bottom, #f5f5f7, white, white)",
             }}
-            className="relative  w-full max-w-[350px] md:max-w-[350px] flex flex-col items-center text-center"
+            className="relative   w-full max-w-[350px] md:max-w-[350px]  flex flex-col items-center text-center"
           >
-            <div className="absolute p-2 -translate-x-[54px] bg-white rounded-full -translate-y-[58px] hidden md:block">
+            <div className="absolute p-2 -translate-x-[54px] bg-white rounded-full -translate-y-[58px] hidden md:block ">
               <div className="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-50">
                 <span className="text-3xl font-bold text-orange-500">3</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-between w-full p-3 pt-4 border-b h-[150px] bg-slate-100">
+            <div className="flex flex-wrap justify-between w-full p-3 pt-4 border-b md:h-[150px]  bg-slate-100  ">
               <div className="p-2 mx-2 text-left bg-white rounded-lg">
                 <span className="text-sm md:text-base md:mt-2">
                   Fast Delivery

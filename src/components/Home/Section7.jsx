@@ -20,8 +20,8 @@ const Section7 = () => {
           {/* Right Section (Text) */}
           <div className="w-full mt-6 text-left md:w-1/2 md:mt-0">
             <h3
-              className="text-xl font-semibold md:text-2xl lg:text-4xl"
-              style={{ lineHeight: "3rem" }}
+              className="text-xl font-semibold md:text-2xl lg:text-4xl md:leading-[3rem] leading-[2rem]"
+              // style={{ lineHeight: "3rem" }}
             >
               Order Processing and Inventory Management :
               <span className="mt-2 ">

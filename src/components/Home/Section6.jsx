@@ -16,8 +16,8 @@ const Section6 = () => {
             {/* Left Section (Text Content) */}
             <div className="w-full text-left md:w-1/2">
               <h3
-                className="text-xl font-semibold md:text-2xl lg:text-4xl "
-                style={{ lineHeight: "3.2rem" }}
+                className="text-xl font-semibold md:text-2xl lg:text-4xl leading-[2rem] md:leading-[3.2rem] "
+                // style={{ lineHeight: "3.2rem" }}
               >
                 Pick and Pack Services: <br />
                 Precision and Efficiency in Fulfillment

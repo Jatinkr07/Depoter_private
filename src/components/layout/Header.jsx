@@ -3,11 +3,11 @@ import { FiMenu, FiX } from "react-icons/fi"; // Import hamburger and close icon
 import logoTxt from "../../assets/header/logoText.png";
 import logo from "../../assets/header/logo.png";
 import Container from "../global/Container";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { FaArrowDown, FaArrowUp, FaHandshake } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
-import { AiOutlineLogin, AiOutlinePhone } from "react-icons/ai";
+import { AiOutlineLogin } from "react-icons/ai";
 
 const Header = () => {
   const navigate = useNavigate();

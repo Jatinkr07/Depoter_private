@@ -10,8 +10,8 @@ const Section12 = () => {
           {/* Left Section (Text) */}
           <div className="w-full text-left md:w-1/2">
             <h3
-              className="text-lg font-semibold leading-snug md:text-4xl"
-              style={{ lineHeight: "3.2rem" }}
+              className="text-lg font-semibold md:leading-[3.2rem] leading-[2rem] md:text-4xl"
+              // style={{ lineHeight: "3.2rem" }}
             >
               Last-Mile Delivery: Ensuring Timely and Reliable Deliveries
             </h3>
