@@ -18,6 +18,7 @@ import BlogHome from "./pages/BlogHome";
 import ScrollTop from "./hook/scrollTop";
 import Page8 from "./pages/Page8";
 import Page9 from "./pages/Page9";
+import StorageService from "./pages/StorageService";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path="page8" element={<BlogHome />} />
       <Route path="/page9" element={<Page8 />} />
       <Route path="/page10" element={<Page9 />} />
+      <Route path="/storage-service" element={<StorageService />} />
     </Route>
   )
 );

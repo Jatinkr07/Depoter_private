@@ -61,7 +61,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`w-full text-black py-2 fixed top-0 z-50 transition-colors duration-300 ${
+        className={`w-full px-4 text-black py-2 fixed top-0 z-50 transition-colors duration-300 ${
           isSticky ? "bg-[#FFBE2E]" : "bg-transparent"
         }`}
       >
